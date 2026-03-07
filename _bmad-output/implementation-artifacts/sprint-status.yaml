@@ -1,0 +1,91 @@
+# generated: 2026-03-07
+# project: BardicanAI
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog -> in-progress: Automatically when first story is created (via create-story)
+#   - in-progress -> done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-03-07
+project: BardicanAI
+project_key: NOKEY
+tracking_system: file-system
+story_location: "_bmad-output/implementation-artifacts"
+
+development_status:
+  epic-1: in-progress
+  1-1-project-initialization-and-dev-environment: in-progress
+  1-2-workspace-shell-and-split-pane-layout: backlog
+  1-3-strudel-code-editor-integration: backlog
+  1-4-playback-runtime-and-transport-controls: backlog
+  1-5-empty-and-first-use-state: backlog
+  1-6-epic-1-validation-and-foundation-quality-gate: backlog
+  epic-1-retrospective: optional
+
+  epic-2: backlog
+  2-1-backend-session-and-api-foundation: backlog
+  2-2-rag-knowledge-store-setup: backlog
+  2-3-intent-extraction-agent: backlog
+  2-4-strudel-code-generation-agent: backlog
+  2-5-orchestrator-agent-and-sse-streaming: backlog
+  2-6-chat-interface-and-generation-flow: backlog
+  2-7-epic-2-validation-and-generation-quality-gate: backlog
+  epic-2-retrospective: optional
+
+  epic-3: backlog
+  3-1-patch-agent-with-preserve-lock: backlog
+  3-2-orchestrator-patch-routing: backlog
+  3-3-narration-agent: backlog
+  3-4-iterative-editing-and-corrective-feedback-loop: backlog
+  3-5-epic-3-validation-and-patch-quality-gate: backlog
+  epic-3-retrospective: optional
+
+  epic-4: backlog
+  4-1-patch-highlighting-in-editor: backlog
+  4-2-patch-stack-and-one-click-revert: backlog
+  4-3-change-narration-display-and-patch-applied-state: backlog
+  4-4-session-continuity-and-stability: backlog
+  4-5-daw-export-and-code-handoff: backlog
+  4-6-epic-4-validation-and-stability-quality-gate: backlog
+  epic-4-retrospective: optional
+
+  epic-5: backlog
+  5-1-generation-configuration-and-prompt-tuning: backlog
+  5-2-logging-and-issue-investigation: backlog
+  5-3-release-management-and-quality-safeguards: backlog
+  5-4-epic-5-validation-and-operations-quality-gate: backlog
+  epic-5-retrospective: optional
+
+  epic-6: backlog
+  6-1-public-documentation-and-setup-guide: backlog
+  6-2-public-issue-workflow-and-support-process: backlog
+  6-3-extensibility-verification-and-future-proofing: backlog
+  6-4-epic-6-validation-and-full-product-acceptance: backlog
+  epic-6-retrospective: optional
