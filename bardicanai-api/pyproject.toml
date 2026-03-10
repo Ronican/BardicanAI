@@ -1,7 +1,7 @@
 [project]
 name = "bardicanai-api"
 version = "0.1.0"
-description = "Add your description here"
+description = "BardicanAI API - AI-assisted music creation backend"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,4 +12,11 @@ dependencies = [
     "pydantic-ai[anthropic,google]>=1.67.0",
     "pydantic-settings>=2.13.1",
     "sqlalchemy[asyncio]>=2.0.48",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
 ]

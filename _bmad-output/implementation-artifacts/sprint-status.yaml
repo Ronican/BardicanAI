@@ -41,7 +41,7 @@ story_location: "_bmad-output/implementation-artifacts"
 
 development_status:
   epic-1: in-progress
-  1-1-project-initialization-and-dev-environment: in-progress
+  1-1-project-initialization-and-dev-environment: done
   1-2-workspace-shell-and-split-pane-layout: backlog
   1-3-strudel-code-editor-integration: backlog
   1-4-playback-runtime-and-transport-controls: backlog

@@ -6,7 +6,7 @@ AI-assisted music creation through conversational Strudel code generation.
 
 - Node.js 18+ (LTS recommended)
 - pnpm 9+ (`npm install -g pnpm`)
-- Python 3.11+
+- Python 3.12+
 - uv (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
 
 ## Setup
