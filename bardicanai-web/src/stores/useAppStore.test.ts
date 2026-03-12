@@ -49,4 +49,15 @@ describe("useAppStore", () => {
     expect(useAppStore.getState().editor.code).toBe("beta");
     expect(useAppStore.getState().patch.stack.map((entry) => entry.code)).toEqual(["alpha", "beta"]);
   });
+
+  it("revertToPatch leaves state unchanged when the index is out of range", () => {
+    useAppStore.getState().setCode("current");
+    useAppStore.getState().pushPatch("alpha");
+    useAppStore.getState().pushPatch("beta");
+
+    useAppStore.getState().revertToPatch(99);
+
+    expect(useAppStore.getState().editor.code).toBe("current");
+    expect(useAppStore.getState().patch.stack.map((entry) => entry.code)).toEqual(["alpha", "beta"]);
+  });
 });
