@@ -15,6 +15,7 @@ export interface PatchSlice extends PatchSliceState, PatchSliceActions {}
 
 type PatchSliceDependencies = PatchSlice & {
   editor: { code: string };
+  setCode: (code: string) => void;
 };
 
 export const createPatchSlice: StateCreator<
@@ -22,7 +23,7 @@ export const createPatchSlice: StateCreator<
   [],
   [],
   PatchSlice
-> = (set) => ({
+> = (set, get) => ({
   patch: { stack: [] },
   pushPatch: (code) =>
     set((state) => {
@@ -37,19 +38,18 @@ export const createPatchSlice: StateCreator<
         },
       };
     }),
-  revertToPatch: (index) =>
-    set((state) => {
-      if (index < 0 || index >= state.patch.stack.length) {
-        return state;
-      }
+  revertToPatch: (index) => {
+    const stack = get().patch.stack;
 
-      const selectedPatch = state.patch.stack[index];
+    if (index < 0 || index >= stack.length) {
+      return;
+    }
 
-      return {
-        editor: { code: selectedPatch.code },
-        patch: {
-          stack: state.patch.stack.slice(0, index + 1),
-        },
-      };
-    }),
+    get().setCode(stack[index].code);
+    set({
+      patch: {
+        stack: stack.slice(0, index + 1),
+      },
+    });
+  },
 });
