@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { MAX_PATCH_HISTORY } from "@/lib/constants";
+import type { PatchEntry } from "@/types/store";
 import { useAppStore } from "./useAppStore";
 
 describe("useAppStore", () => {
@@ -47,7 +48,7 @@ describe("useAppStore", () => {
     useAppStore.getState().revertToPatch(1);
 
     expect(useAppStore.getState().editor.code).toBe("beta");
-    expect(useAppStore.getState().patch.stack.map((entry) => entry.code)).toEqual(["alpha", "beta"]);
+    expect(useAppStore.getState().patch.stack.map((entry: PatchEntry) => entry.code)).toEqual(["alpha", "beta"]);
   });
 
   it("revertToPatch leaves state unchanged when the index is out of range", () => {
@@ -58,6 +59,6 @@ describe("useAppStore", () => {
     useAppStore.getState().revertToPatch(99);
 
     expect(useAppStore.getState().editor.code).toBe("current");
-    expect(useAppStore.getState().patch.stack.map((entry) => entry.code)).toEqual(["alpha", "beta"]);
+    expect(useAppStore.getState().patch.stack.map((entry: PatchEntry) => entry.code)).toEqual(["alpha", "beta"]);
   });
 });
