@@ -1,6 +1,6 @@
 # Story 1.2: Workspace Shell & Split-Pane Layout
 
-Status: review
+Status: done
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -120,6 +120,7 @@ so that I can orient myself in the creative environment and understand where eac
 ## Change Log
 
 - Implemented Story 1.2 workspace shell, state scaffolding, provider scaffolding, tests, and verification on main.
+- Code review fixes: added `aria-label="Message input"` and focus-visible ring to ChatRail input (AC 4 / NFR12); removed hardcoded `font-family: Arial` from `globals.css` body so Geist fonts apply correctly; corrected TransportBar focus ring from `ring-accent-cyan` → `ring-accent-magenta` per Dev Notes; removed `passWithNoTests: true` from vitest.config.ts.
 
 ## Dev Notes
 

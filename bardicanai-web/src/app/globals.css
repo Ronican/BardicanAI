@@ -28,5 +28,4 @@ body {
   background: var(--color-surface-base);
   color: var(--color-text-primary);
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
 }
