@@ -1,6 +1,6 @@
 # Story 1.2: Workspace Shell & Split-Pane Layout
 
-Status: ready-for-dev
+Status: review
 
 <!-- Note: Validation is optional. Run validate-create-story for quality check before dev-story. -->
 
@@ -41,81 +41,85 @@ so that I can orient myself in the creative environment and understand where eac
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Install frontend dependencies (AC: #5)
-  - [ ] 1.1 In `bardicanai-web/`, run: `pnpm add zustand@5.0.11 @tanstack/react-query@5.90.21`
-  - [ ] 1.2 Verify both packages appear in `package.json` under `dependencies`
-  - [ ] 1.3 Run `pnpm dev` to confirm no import errors with new dependencies
+- [x] Task 1: Install frontend dependencies (AC: #5)
+  - [x] 1.1 In `bardicanai-web/`, run: `pnpm add zustand@5.0.11 @tanstack/react-query@5.90.21`
+  - [x] 1.2 Verify both packages appear in `package.json` under `dependencies`
+  - [x] 1.3 Run `pnpm dev` to confirm no import errors with new dependencies
 
-- [ ] Task 2: Scaffold directory structure (AC: all)
-  - [ ] 2.1 Create `src/components/workspace/` directory
-  - [ ] 2.2 Create `src/stores/` directory
-  - [ ] 2.3 Create `src/hooks/` directory
-  - [ ] 2.4 Create `src/lib/` directory
-  - [ ] 2.5 Create `src/types/` directory
+- [x] Task 2: Scaffold directory structure (AC: all)
+  - [x] 2.1 Create `src/components/workspace/` directory
+  - [x] 2.2 Create `src/stores/` directory
+  - [x] 2.3 Create `src/hooks/` directory
+  - [x] 2.4 Create `src/lib/` directory
+  - [x] 2.5 Create `src/types/` directory
 
-- [ ] Task 3: Set up Zustand store with all 6 slices (AC: #5)
-  - [ ] 3.1 Create `src/stores/sessionSlice.ts` — slice with `session_id`, `created_at`, `name`
-  - [ ] 3.2 Create `src/stores/chatSlice.ts` — slice with `messages: ChatMessage[]` and `appendChatMessage` action
-  - [ ] 3.3 Create `src/stores/editorSlice.ts` — slice with `code: string` (empty string default) and `setCode` action; this is the SINGLE source of truth for all code state
-  - [ ] 3.4 Create `src/stores/patchSlice.ts` — slice with `stack: string[]` (max `MAX_PATCH_HISTORY = 50`), `pushPatch`, and `revertToPatch` actions
-  - [ ] 3.5 Create `src/stores/playbackSlice.ts` — slice with `isPlaying: boolean`, `tempo: number | null`
-  - [ ] 3.6 Create `src/stores/uiSlice.ts` — slice with `isGenerating: boolean`, `activePanelFocus: string | null`, `patchHighlightRange: null`
-  - [ ] 3.7 Create `src/stores/useAppStore.ts` — combine all slices into a single Zustand store using `create` with `immer` or plain mutate pattern; export `useAppStore`
+- [x] Task 3: Set up Zustand store with all 6 slices (AC: #5)
+  - [x] 3.1 Create `src/stores/sessionSlice.ts` — slice with `session_id`, `created_at`, `name`
+  - [x] 3.2 Create `src/stores/chatSlice.ts` — slice with `messages: ChatMessage[]` and `appendChatMessage` action
+  - [x] 3.3 Create `src/stores/editorSlice.ts` — slice with `code: string` (empty string default) and `setCode` action; this is the SINGLE source of truth for all code state
+  - [x] 3.4 Create `src/stores/patchSlice.ts` — slice with `stack: string[]` (max `MAX_PATCH_HISTORY = 50`), `pushPatch`, and `revertToPatch` actions
+  - [x] 3.5 Create `src/stores/playbackSlice.ts` — slice with `isPlaying: boolean`, `tempo: number | null`
+  - [x] 3.6 Create `src/stores/uiSlice.ts` — slice with `isGenerating: boolean`, `activePanelFocus: string | null`, `patchHighlightRange: null`
+  - [x] 3.7 Create `src/stores/useAppStore.ts` — combine all slices into a single Zustand store using `create` with `immer` or plain mutate pattern; export `useAppStore`
 
-- [ ] Task 4: Create TypeScript types (AC: all)
-  - [ ] 4.1 Create `src/types/store.ts` — export `ChatMessage`, `PatchEntry`, and other shared store types
-  - [ ] 4.2 Create `src/types/api.ts` — placeholder file (will be populated by story 2.x) with comment: "// API request/response types for snake_case ↔ camelCase bridge"
+- [x] Task 4: Create TypeScript types (AC: all)
+  - [x] 4.1 Create `src/types/store.ts` — export `ChatMessage`, `PatchEntry`, and other shared store types
+  - [x] 4.2 Create `src/types/api.ts` — placeholder file (will be populated by story 2.x) with comment: "// API request/response types for snake_case ↔ camelCase bridge"
 
-- [ ] Task 5: Update global theme for dark creative-tool aesthetic (AC: #1, #2)
-  - [ ] 5.1 Update `src/app/globals.css` to define design tokens: `--color-surface-base` (#0a0a0a), `--color-surface-raised` (#111111), `--color-surface-border` (#2a2a2a), `--color-accent-magenta` (#d946ef), `--color-accent-cyan` (#06b6d4), `--color-accent-green` (#22d3ee), `--color-text-primary` (#f4f4f5), `--color-text-muted` (#71717a)
-  - [ ] 5.2 Set `body { background: var(--color-surface-base); color: var(--color-text-primary); overflow: hidden; }` — `overflow: hidden` because the workspace shell controls its own scroll regions
-  - [ ] 5.3 Remove light-mode defaults in globals.css — this app is always dark
+- [x] Task 5: Update global theme for dark creative-tool aesthetic (AC: #1, #2)
+  - [x] 5.1 Update `src/app/globals.css` to define design tokens: `--color-surface-base` (#0a0a0a), `--color-surface-raised` (#111111), `--color-surface-border` (#2a2a2a), `--color-accent-magenta` (#d946ef), `--color-accent-cyan` (#06b6d4), `--color-accent-green` (#22d3ee), `--color-text-primary` (#f4f4f5), `--color-text-muted` (#71717a)
+  - [x] 5.2 Set `body { background: var(--color-surface-base); color: var(--color-text-primary); overflow: hidden; }` — `overflow: hidden` because the workspace shell controls its own scroll regions
+  - [x] 5.3 Remove light-mode defaults in globals.css — this app is always dark
 
-- [ ] Task 6: Build workspace shell components (AC: #1, #2, #3, #4)
-  - [ ] 6.1 Create `src/components/workspace/AppShell.tsx`
+- [x] Task 6: Build workspace shell components (AC: #1, #2, #3, #4)
+  - [x] 6.1 Create `src/components/workspace/AppShell.tsx`
     - Three-region layout: `<nav>` ChatRail (left, fixed width ~280px desktop), `<main>` EditorSurface (flex-grow, dominant), `<footer role="contentinfo">` TransportBar (full-width, bottom)
     - Use CSS Grid or Flexbox for layout: `grid-template-areas: "chat editor" "transport transport"` at ≥1024px; stacked column at <1024px
     - Full-height viewport: `height: 100dvh` with no overflow on root
-  - [ ] 6.2 Create `src/components/workspace/ChatRail.tsx`
+  - [x] 6.2 Create `src/components/workspace/ChatRail.tsx`
     - Semantic: `<aside aria-label="Chat">` wrapper
     - Shell only: render a `<div>` with placeholder text "Chat will appear here" and a composer `<input>` placeholder at the bottom
     - Dark surface: `bg-[#111111]` left border with `border-[#2a2a2a]`
     - At narrow viewports: stacks below editor, collapses to minimum height
-  - [ ] 6.3 Create `src/components/workspace/EditorSurface.tsx`
+  - [x] 6.3 Create `src/components/workspace/EditorSurface.tsx`
     - Semantic: `<section aria-label="Code editor">` wrapper
     - Shell only: render a `<div>` with placeholder text "Strudel code editor will appear here (Story 1.3)"
     - Visually dominant: fills all available space, slightly lighter surface `bg-[#0d0d0d]`
     - Receives keyboard focus via `tabIndex={0}` for accessibility
-  - [ ] 6.4 Create `src/components/workspace/TransportBar.tsx`
+  - [x] 6.4 Create `src/components/workspace/TransportBar.tsx`
     - Semantic: `<footer role="contentinfo" aria-label="Playback controls">` wrapper (or `<nav aria-label="Playback controls">`)
     - Shell only: render three placeholder buttons — Play, Stop, Restart — all `disabled` (no audio yet, Story 1.4)
     - Music-tool style: dark surface `bg-[#111111]`, top border `border-t border-[#2a2a2a]`, full width, fixed height (~56px)
     - Each button has `aria-label` (e.g., `aria-label="Play"`) for NFR12
     - Visible focus indicators on all buttons (NFR11)
 
-- [ ] Task 7: Wire `AppShell` into Next.js root page (AC: #1)
-  - [ ] 7.1 Replace contents of `src/app/page.tsx` with `<AppShell />` (remove all default Next.js content)
-  - [ ] 7.2 Update `src/app/layout.tsx` to add `suppressHydrationWarning` and ensure body fills viewport (`className="h-screen overflow-hidden"`)
-  - [ ] 7.3 Verify `pnpm dev` renders the AppShell (three regions visible, dark background)
+- [x] Task 7: Wire `AppShell` into Next.js root page (AC: #1)
+  - [x] 7.1 Replace contents of `src/app/page.tsx` with `<AppShell />` (remove all default Next.js content)
+  - [x] 7.2 Update `src/app/layout.tsx` to add `suppressHydrationWarning` and ensure body fills viewport (`className="h-screen overflow-hidden"`)
+  - [x] 7.3 Verify `pnpm dev` renders the AppShell (three regions visible, dark background)
 
-- [ ] Task 8: Add TanStack Query provider (AC: background setup)
-  - [ ] 8.1 Create `src/lib/queryClient.ts` — `export const queryClient = new QueryClient()`
-  - [ ] 8.2 Create `src/components/Providers.tsx` — wraps children in `<QueryClientProvider client={queryClient}>`
-  - [ ] 8.3 Wrap layout `children` in `<Providers>` in `src/app/layout.tsx`
+- [x] Task 8: Add TanStack Query provider (AC: background setup)
+  - [x] 8.1 Create `src/lib/queryClient.ts` — `export const queryClient = new QueryClient()`
+  - [x] 8.2 Create `src/components/Providers.tsx` — wraps children in `<QueryClientProvider client={queryClient}>`
+  - [x] 8.3 Wrap layout `children` in `<Providers>` in `src/app/layout.tsx`
 
-- [ ] Task 9: Tests (AC: #4, #5)
-  - [ ] 9.1 Install test dependencies: `pnpm add -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom`
-  - [ ] 9.2 Create `vitest.config.ts` at `bardicanai-web/` root
-  - [ ] 9.3 Add `"test": "vitest"` to `package.json` scripts
-  - [ ] 9.4 Create `src/stores/useAppStore.test.ts` — test that `setCode("bd")` updates `store.editor.code` to `"bd"`, and that no other slice holds a `code` field
-  - [ ] 9.5 Create `src/components/workspace/AppShell.test.tsx` — test that AppShell renders all three landmark regions (`aside[aria-label]`, `section[aria-label]`, `footer[aria-label]` or equivalent)
-  - [ ] 9.6 Run `pnpm test` and confirm all tests pass
+- [x] Task 9: Tests (AC: #4, #5)
+  - [x] 9.1 Install test dependencies: `pnpm add -D vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom`
+  - [x] 9.2 Create `vitest.config.ts` at `bardicanai-web/` root
+  - [x] 9.3 Add `"test": "vitest"` to `package.json` scripts
+  - [x] 9.4 Create `src/stores/useAppStore.test.ts` — test that `setCode("bd")` updates `store.editor.code` to `"bd"`, and that no other slice holds a `code` field
+  - [x] 9.5 Create `src/components/workspace/AppShell.test.tsx` — test that AppShell renders all three landmark regions (`aside[aria-label]`, `section[aria-label]`, `footer[aria-label]` or equivalent)
+  - [x] 9.6 Run `pnpm test` and confirm all tests pass
 
-- [ ] Task 10: Verification (AC: #1, #2, #3, #4)
-  - [ ] 10.1 Start `pnpm dev` and view at 1440px — confirm three regions visible, editor dominant, dark aesthetic
-  - [ ] 10.2 Resize to 768px — confirm ChatRail stacks below editor, TransportBar still visible
-  - [ ] 10.3 Tab through the page — confirm focus moves to ChatRail, EditorSurface, and TransportBar buttons without traps
-  - [ ] 10.4 Inspect DOM — confirm `<aside>`, `<section>`, `<footer>` or role attributes on all three regions
+- [x] Task 10: Verification (AC: #1, #2, #3, #4)
+  - [x] 10.1 Start `pnpm dev` and view at 1440px — confirm three regions visible, editor dominant, dark aesthetic
+  - [x] 10.2 Resize to 768px — confirm ChatRail stacks below editor, TransportBar still visible
+  - [x] 10.3 Tab through the page — confirm focus moves to ChatRail and EditorSurface without traps; disabled TransportBar buttons remain present but are not focusable by native browser behavior
+  - [x] 10.4 Inspect DOM — confirm `<aside>`, `<section>`, `<footer>` or role attributes on all three regions and labeled playback controls are present in the accessibility tree
+
+## Change Log
+
+- Implemented Story 1.2 workspace shell, state scaffolding, provider scaffolding, tests, and verification on main.
 
 ## Dev Notes
 
@@ -429,10 +433,55 @@ describe('editorSlice', () => {
 
 ### Agent Model Used
 
-{{agent_model_name_version}}
+Claude Sonnet 4.6 (claude-sonnet-4-6[1m])
 
 ### Debug Log References
 
+- Manual verification captured semantic shell regions and keyboard focus traversal on localhost:3000.
+- Resolved a post-merge local dev-server dependency state issue by reinstalling merged frontend dependencies on main and re-verifying `pnpm dev`.
+- Corrected `patchSlice.revertToPatch()` to route code restoration through the canonical `setCode()` action before final review approval.
+
 ### Completion Notes List
 
+- Added a shell-only workspace layout with `ChatRail`, dominant `EditorSurface`, and persistent `TransportBar`.
+- Added a single combined Zustand store with namespaced slices for session, chat, editor, patch, playback, and UI state.
+- Enforced `editor.code` as the canonical code source of truth and covered patch history/revert behavior with tests.
+- Added TanStack Query provider scaffolding through `Providers.tsx` and `queryClient.ts`.
+- Added Vitest and React Testing Library coverage for the shell landmarks and store contract.
+- Verified desktop and narrow viewport shell behavior, semantic landmarks, and keyboard traversal.
+- Added the empty `src/hooks/` scaffold to match the story’s requested frontend structure.
+
 ### File List
+
+- bardicanai-web/package.json
+- bardicanai-web/pnpm-lock.yaml
+- bardicanai-web/src/app/globals.css
+- bardicanai-web/src/app/layout.tsx
+- bardicanai-web/src/app/page.tsx
+- bardicanai-web/src/components/Providers.tsx
+- bardicanai-web/src/components/workspace/.gitkeep
+- bardicanai-web/src/components/workspace/AppShell.test.tsx
+- bardicanai-web/src/components/workspace/AppShell.tsx
+- bardicanai-web/src/components/workspace/ChatRail.tsx
+- bardicanai-web/src/components/workspace/EditorSurface.tsx
+- bardicanai-web/src/components/workspace/TransportBar.tsx
+- bardicanai-web/src/hooks/.gitkeep
+- bardicanai-web/src/lib/.gitkeep
+- bardicanai-web/src/lib/constants.ts
+- bardicanai-web/src/lib/queryClient.ts
+- bardicanai-web/src/stores/.gitkeep
+- bardicanai-web/src/stores/chatSlice.ts
+- bardicanai-web/src/stores/editorSlice.ts
+- bardicanai-web/src/stores/patchSlice.ts
+- bardicanai-web/src/stores/playbackSlice.ts
+- bardicanai-web/src/stores/sessionSlice.ts
+- bardicanai-web/src/stores/uiSlice.ts
+- bardicanai-web/src/stores/useAppStore.test.ts
+- bardicanai-web/src/stores/useAppStore.ts
+- bardicanai-web/src/test/setup.ts
+- bardicanai-web/src/types/.gitkeep
+- bardicanai-web/src/types/api.ts
+- bardicanai-web/src/types/store.ts
+- bardicanai-web/vitest.config.ts
+- _bmad-output/implementation-artifacts/sprint-status.yaml
+- _bmad-output/implementation-artifacts/1-2-workspace-shell-and-split-pane-layout.md
